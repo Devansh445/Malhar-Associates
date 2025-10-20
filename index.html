@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Malhar & Associates - Legal Consultation & Services</title>
+  <meta name="description" content="Malhar Advocates - Expert Legal Consultation and Representation" />
+
+  <style>
+    :root {
+      --accent: #0b6ef6;
+      --dark: #000; /* pure black background */
+      --muted: #99a0ad;
+      --card: #ffffff10;
+      --glass: rgba(255,255,255,0.04);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      background-color: var(--dark);
+      background-image: url('logo.jpg'); /* 🔹 Replace with your logo path */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+      background-size: 400px auto;
+      color: #e6eef8;
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.45;
+
+      /* 🔹 Adds soft transparency layer for watermark effect */
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Optional faint overlay to make logo blend naturally */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* darkens to make logo faint */
+      z-index: -1;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff;
+    }
+    .logo-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 8px;
+  object-fit: fill;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  /* background: #fff; optional, remove if your logo has background */
+  padding: 4px; /* optional for spacing */
+}
+
+
+
+    nav ul { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; font-weight: 600; }
+    nav a { color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
+    nav a:hover { color: #fff; background: rgba(255,255,255,0.03); }
+
+    .cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--accent); color: #04283a; padding: 10px 14px;
+      border-radius: 10px; font-weight: 700; text-decoration: none;
+      box-shadow: 0 6px 18px rgba(11,110,246,0.15);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 30px;
+      align-items: center;
+      margin: 28px 0 36px;
+    }
+    .hero .left h1 { font-size: 2.4rem; margin: 0 0 12px }
+    .hero .left p { color: var(--muted); margin: 0 0 18px }
+    .features { display: flex; gap: 12px; flex-wrap: wrap }
+    .pill {
+      background: var(--card); padding: 10px 12px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.03); font-weight: 600; color: #eaf4ff
+    }
+
+    .hero .card {
+      background: var(--glass); padding: 18px; border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6); text-align: center;
+    }
+    .hero .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 12px }
+    .hero .card .muted { color: var(--muted); font-size: 0.95rem; margin-bottom: 8px }
+
+    .about {
+      background: var(--glass); padding: 24px; border-radius: 12px;
+      margin: 40px 0; border: 1px solid rgba(255,255,255,0.05);
+    }
+    .about h2 { margin-top: 0; color: #fff; font-size: 1.8rem; }
+    .about p { color: var(--muted); margin: 10px 0; font-size: 1rem; }
+
+    .services { margin: 30px 0 }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 14px
+    }
+    .service {
+      background: var(--glass); padding: 24px; border-radius: 12px;
+      margin: 40px 0; border: 1px solid rgba(255,255,255,0.05);
+      display: flex; gap: 12px; align-items: center;
+    }
+    .service h4 { margin: 0; font-size: 1rem }
+    .service p { margin: 4px 0 0; color: var(--muted); font-size: 0.92rem }
+
+    footer {
+      margin-top: 38px; padding: 20px 0; border-top: 1px solid rgba(255,255,255,0.03);
+      color: var(--muted); display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 12px
+    }
+    .links { display: flex; gap: 12px; flex-wrap: wrap }
+    .small { font-size: 0.92rem }
+
+    @media (max-width:880px) {
+      .hero { grid-template-columns: 1fr; padding-bottom: 8px }
+      header { flex-direction: column; align-items: flex-start; gap: 16px }
+      nav ul { flex-wrap: wrap }
+    }
+    @media (max-width: 500px) {
+  .logo-img {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  header {
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  .hero .left h1 {
+    font-size: 1.8rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <a class="brand" href="#">
+        <img src="logo.jpg" alt="Malhar & Associates Logo" class="logo-img" />
+        <div>
+          <div style="font-weight:800;font-size:1.2rem;color:#fff;">Malhar & Associates</div>
+          <div style="font-size:0.82rem;color:var(--muted);margin-top:4px">Legal Consultation & Representation</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Legal Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="cta" href="tel:+919111842420">Call: +91 91118 42420</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="left">
+          <h1>Professional Legal Services You Can Trust</h1>
+          <p>Malhar & Associates provides expert legal consultation and representation across a wide range of legal domains. Get timely and effective advice from experienced professionals.</p>
+
+          <div class="features" style="margin-top:14px">
+            <span class="pill">Expert Lawyer</span>
+            <span class="pill">Transparent Process</span>
+            <span class="pill">Client-Focused</span>
+          </div>
+
+          <div style="margin-top:20px;display:flex;gap:10px;">
+            <a class="cta" href="#contact" style="text-decoration:none;">Get Consultation</a>
+            <a href="#services" style="padding:10px 14px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);text-decoration:none;font-weight:700;">View Services</a>
+          </div>
+        </div>
+
+        <!-- <aside class="card">
+          <img src="https://via.placeholder.com/600x320?text=Legal+Consultation" alt="Legal Consultation">
+          <div class="muted">Trusted Legal Solutions</div>
+          <div style="font-weight:800;font-size:1.05rem">Justice. Integrity. Professionalism.</div>
+          <div style="margin-top:10px;color:var(--muted);font-size:0.95rem">Our team works diligently to protect your rights and deliver timely, effective outcomes.</div>
+        </aside> -->
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Malhar & Associates, we specialize in all types of legal work and offer effective legal solutions for criminal cases. Our firm is built on the pillars of justice, integrity, and professionalism, ensuring every client receives fair and transparent legal representation.</p>
+        <p>We take pride in our commitment to timely resolutions, understanding that every case demands not only expertise but also empathy and precision. Our team works diligently to safeguard our clients’ rights, providing strategic guidance and personalized support at every step.</p>
+        <p>Driven by a passion for justice and a reputation for reliability, Malhar & Associates continues to stand out as a trusted name in the field of law.</p>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services">
+        <h2 style="margin:0 0 12px">Legal Services</h2>
+        <div class="services-grid">
+          <div class="service">
+            <!-- <img src="https://via.placeholder.com/120?text=Criminal" alt=""> -->
+            <div>
+              <h4>Criminal Lawyer</h4>
+              <p>Expert representation in criminal matters with confidentiality.</p>
+            </div>
+          </div>
+
+          <div class="service">
+            <!-- <img src="https://via.placeholder.com/120?text=Property" alt=""> -->
+            <div>
+              <h4>Property and registry work</h4>
+              <p>All kinds of registry work agreement, disputes & mortgage.</p>
+            </div>
+          </div>
+
+
+          <div class="service">
+            <!-- <img src="https://via.placeholder.com/120?text=Civil" alt=""> -->
+            <div>
+              <h4>Civil Lawyer</h4>
+              <p>Resolving property, contract, and family disputes effectively.</p>
+            </div>
+          </div>
+
+          <div class="service">
+            <!-- <img src="https://via.placeholder.com/120?text=Corporate" alt=""> -->
+            <div>
+              <h4>Corporate Lawyer</h4>
+              <p>Helping startups and businesses with legal compliance and documentation.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="contact">
+      <div>
+        <strong>Malhar & Associates
+            <br>
+            Sagar Malhar
+        </strong>
+        <div class="small" style="margin-top:6px">Professional Legal Consultation — +91 91118 42420
+            <br>
+            Address: Palda, Indore(M.P)
+        </div>
+      </div>
+
+      <div class="links small">
+        <a href="#about" style="color:var(--muted);text-decoration:none">About</a>
+        <a href="#" style="color:var(--muted);text-decoration:none">Privacy</a>
+        <a href="#" style="color:var(--muted);text-decoration:none">Terms</a>
+        <span style="color:var(--muted)">© <span id="yr"></span> Malhar & Associates</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
