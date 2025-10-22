@@ -17,52 +17,61 @@
     }
 
     * { box-sizing: border-box }
-    body {
+     body {
       margin: 0;
       background-color: var(--dark);
-      background-image: url('logo.jpg'); /* 🔹 Replace with your logo path */
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-attachment: fixed;
-      background-size: 400px auto;
       color: #e6eef8;
       -webkit-font-smoothing: antialiased;
       line-height: 1.45;
-
-      /* 🔹 Adds soft transparency layer for watermark effect */
       position: relative;
       overflow-x: hidden;
     }
 
-    /* Optional faint overlay to make logo blend naturally */
-   body {
-  background-color: var(--dark);
-  color: #e6eef8;
-  position: relative;
-  overflow-x: hidden;
+    /* ✅ Handles the fixed background image visually for all devices */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url('logo.jpg'); /* your logo path */
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 400px auto;
+      z-index: -2;
+    }
+
+    /* ✅ Keeps your faint overlay, same as before */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 18px 0;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff;
+    }
+    .logo-img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 8px;
+  object-fit: fill;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  /* background: #fff; optional, remove if your logo has background */
+  padding: 4px; /* optional for spacing */
 }
 
-body {
-  margin: 0;
-  background-color: var(--dark);
-  color: #e6eef8;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.45;
-  position: relative;
-  overflow-x: hidden;
-}
 
-/* Show the logo clearly as a fixed background (works on iOS) */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url('logo.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 400px auto;
-  z-index: -1;
-}
 
     nav ul { display: flex; gap: 12px; list-style: none; margin: 0; padding: 0; font-weight: 600; }
     nav a { color: var(--muted); text-decoration: none; padding: 8px 10px; border-radius: 8px; }
@@ -261,6 +270,9 @@ body::before {
             Sagar Malhar
         </strong>
         <div class="small" style="margin-top:6px">Professional Legal Consultation — +91 91118 42420
+
+
+
             <br>
             Address: Palda, Indore(M.P)
         </div>
